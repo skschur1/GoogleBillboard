@@ -3,18 +3,26 @@ public void setup()
 {            
 	String digits = e.substring(2, 12);
 	double series = Double.parseDouble(digits);
-	for (int i = 0; i < digits.length)
+	for (int i = 2; i < e.length() - 9; i++)
+	{
+		digits = e.substring(i, i + 10);
+		series = Double.parseDouble(digits);
+		if (isPrime(series))
+		{
+			System.out.println(series);
+		}
+	}
     noLoop();  
 }  
 public void draw()  
 {   
 	//not needed for this assignment
 }  
-public boolean isPrime(int num)
+public boolean isPrime(double num)
 {
   if (num <= 1)
     return false;
-  for (int i = 1; i <= Math.sqrt(num); i++)
+  for (int i = 2; i <= Math.sqrt(num); i++)
   {
     if (num % i == 0)
       return false;
